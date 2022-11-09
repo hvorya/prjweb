@@ -1,0 +1,497 @@
+/*
+   Author: V.h;
+   Theme: Restaurant federation; 
+   version:1.0;
+ */
+ *{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+   overflow-x: hidden; /* Hide horizontal scrollbar */
+   margin: 0%;
+   background-color: beige;
+ }
+ h1 {
+   color:#2c3e50;
+ }
+ a{
+   text-decoration: none;
+   color: teal;
+ }
+a:hover{
+   color:green;
+}
+   
+.text-center{
+
+   text-align: center;
+} 
+.section-title{
+   padding-bottom: 5px;
+   padding-top: 0px;
+   font-weight: bold;
+   font-size: larger;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+/*   Css for navigator bar section--------------------------------------------------------------------------------------------------------- */
+.navbar{
+   height: 55%;
+   background-color: beige;
+   margin-top: 20px;
+}
+ .container1 {
+    position: relative;
+    width: 80%;
+    height: 500px;
+    padding: 5%;
+    background-image: url(..\\img\\ingg.jpg);
+    margin:auto;
+ }
+
+.menu {
+   position:absolute;
+   height: 42px;
+   width: 670px;
+   top: 10px;
+   left: 330px;
+   border-bottom: 1px solid teal;
+   padding-bottom: 0px;
+   float: left;
+
+}
+
+.connectRestaurant{
+   float: left;
+   padding: 0%;
+   width:85%;
+   margin-left: 0%;
+
+}
+.login {
+   width:10%;
+   margin-left: 20%;
+}
+
+.search-area{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.search-box {
+   background: #fff;
+   height: 30px;
+   border-radius: 30px;
+   padding: 10px 20px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+   transition: 0.8s;
+   /*box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   inset -7px -7px 10px 0px rgba(0,0,0,.1),
+  7px 7px 20px 0px rgba(0,0,0,.1),
+  4px 4px 5px 0px rgba(0,0,0,.1);
+  text-shadow:  0px 0px 6px rgba(255,255,255,.3),
+             -4px -4px 6px rgba(116, 125, 136, .2);
+ text-shadow: 2px 2px 3px rgba(255,255,255,0.5);*/
+ box-shadow:  4px 4px 6px 0 rgba(255,255,255,.3),
+             -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+   inset -4px -4px 6px 0 rgba(255,255,255,.2),
+   inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
+}
+
+.search-box:hover > .search-input{
+   width: 400px;
+   
+}
+
+.search-box .search-input{
+   background: transparent;
+   border: none;
+   outline:none;
+   width: 0px;
+   font-weight: 500;
+   font-size: 16px;
+   transition: 0.8s;
+
+}
+
+.search-box .search-btn .fas{
+   color: blue;
+}
+
+@keyframes hoverShake {
+ 0% {transform: skew(0deg,0deg);}
+ 25% {transform: skew(5deg, 5deg);}
+ 75% {transform: skew(-5deg, -5deg);}
+ 100% {transform: skew(0deg,0deg);}
+}
+
+.search-box:hover{
+ animation: hoverShake 0.15s linear 3;
+}
+
+.Bottom-page{
+   position:absolute;
+   bottom: 0px;
+   height: 50px;
+   right: 50%;
+   width: 500px;
+   margin-right: -250px;
+}
+.Bottom-page .left {
+   width:109px;
+	height:70px;
+	float:left;
+	background:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhLS0gR2VuZXJhdG9yOiBHcmF2aXQuaW8gLS0+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBzdHlsZT0iaXNvbGF0aW9uOmlzb2xhdGUiIHZpZXdCb3g9IjAgMCA0MDAgMjU2Ljg4MSIgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTYuODgxIj48ZGVmcz48Y2xpcFBhdGggaWQ9Il9jbGlwUGF0aF9XZm0xQXNxMHY5SVZCTTlwMnRxZkthVk0zRW5xak9mQSI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTYuODgxIi8+PC9jbGlwUGF0aD48L2RlZnM+PGcgY2xpcC1wYXRoPSJ1cmwoI19jbGlwUGF0aF9XZm0xQXNxMHY5SVZCTTlwMnRxZkthVk0zRW5xak9mQSkiPjxwYXRoIGQ9IiBNIDE2Mi4xNTkgMTY0LjE5MiBRIDExNy42OTIgMjM0LjQ2MiAwIDI1Ni45MDQgTCA0MDAgMjU2LjkwNCBMIDQwMCAwIEwgMzY4LjcyMiAwLjAyOSBDIDMwMCAtMy4yMzEgMjI0IDI1IDE2Mi4xNTkgMTY0LjE5MiBaICIgZmlsbC1ydWxlPSJldmVub2RkIiBmaWxsPSJyZ2IoMjU1LDI1NSwyNTUpIi8+PC9nPjwvc3ZnPg==') no-repeat;
+	background-size:100% 100%;
+}
+.Bottom-page .middle{
+	width:140px;
+	height:70px;
+	float:left;
+	background:white;
+}
+.Bottom-page .middle a{
+	color: #4b495d;
+	line-height:70px;
+	display:inline-block;
+	padding-left: 37px;
+}
+.Bottom-page .appleLogo{
+	background:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAzMDUgMzA1IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAzMDUgMzA1OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4IiBjbGFzcz0iIj48Zz48ZyBpZD0iWE1MSURfMjI4XyI+Cgk8cGF0aCBpZD0iWE1MSURfMjI5XyIgZD0iTTQwLjczOCwxMTIuMTE5Yy0yNS43ODUsNDQuNzQ1LTkuMzkzLDExMi42NDgsMTkuMTIxLDE1My44MkM3NC4wOTIsMjg2LjUyMyw4OC41MDIsMzA1LDEwOC4yMzksMzA1ICAgYzAuMzcyLDAsMC43NDUtMC4wMDcsMS4xMjctMC4wMjJjOS4yNzMtMC4zNywxNS45NzQtMy4yMjUsMjIuNDUzLTUuOTg0YzcuMjc0LTMuMSwxNC43OTctNi4zMDUsMjYuNTk3LTYuMzA1ICAgYzExLjIyNiwwLDE4LjM5LDMuMTAxLDI1LjMxOCw2LjA5OWM2LjgyOCwyLjk1NCwxMy44NjEsNi4wMSwyNC4yNTMsNS44MTVjMjIuMjMyLTAuNDE0LDM1Ljg4Mi0yMC4zNTIsNDcuOTI1LTM3Ljk0MSAgIGMxMi41NjctMTguMzY1LDE4Ljg3MS0zNi4xOTYsMjAuOTk4LTQzLjAxbDAuMDg2LTAuMjcxYzAuNDA1LTEuMjExLTAuMTY3LTIuNTMzLTEuMzI4LTMuMDY2Yy0wLjAzMi0wLjAxNS0wLjE1LTAuMDY0LTAuMTgzLTAuMDc4ICAgYy0zLjkxNS0xLjYwMS0zOC4yNTctMTYuODM2LTM4LjYxOC01OC4zNmMtMC4zMzUtMzMuNzM2LDI1Ljc2My01MS42MDEsMzAuOTk3LTU0LjgzOWwwLjI0NC0wLjE1MiAgIGMwLjU2Ny0wLjM2NSwwLjk2Mi0wLjk0NCwxLjA5Ni0xLjYwNmMwLjEzNC0wLjY2MS0wLjAwNi0xLjM0OS0wLjM4Ni0xLjkwNWMtMTguMDE0LTI2LjM2Mi00NS42MjQtMzAuMzM1LTU2Ljc0LTMwLjgxMyAgIGMtMS42MTMtMC4xNjEtMy4yNzgtMC4yNDItNC45NS0wLjI0MmMtMTMuMDU2LDAtMjUuNTYzLDQuOTMxLTM1LjYxMSw4Ljg5M2MtNi45MzYsMi43MzUtMTIuOTI3LDUuMDk3LTE3LjA1OSw1LjA5NyAgIGMtNC42NDMsMC0xMC42NjgtMi4zOTEtMTcuNjQ1LTUuMTU5Yy05LjMzLTMuNzAzLTE5LjkwNS03Ljg5OS0zMS4xLTcuODk5Yy0wLjI2NywwLTAuNTMsMC4wMDMtMC43ODksMC4wMDggICBDNzguODk0LDczLjY0Myw1NC4yOTgsODguNTM1LDQwLjczOCwxMTIuMTE5eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBkYXRhLW9sZF9jb2xvcj0iIzRiNDk1ZCIgZmlsbD0iIzRiNDk1ZCIvPgoJPHBhdGggaWQ9IlhNTElEXzIzMF8iIGQ9Ik0yMTIuMTAxLDAuMDAyYy0xNS43NjMsMC42NDItMzQuNjcyLDEwLjM0NS00NS45NzQsMjMuNTgzYy05LjYwNSwxMS4xMjctMTguOTg4LDI5LjY3OS0xNi41MTYsNDguMzc5ICAgYzAuMTU1LDEuMTcsMS4xMDcsMi4wNzMsMi4yODQsMi4xNjRjMS4wNjQsMC4wODMsMi4xNSwwLjEyNSwzLjIzMiwwLjEyNmMxNS40MTMsMCwzMi4wNC04LjUyNyw0My4zOTUtMjIuMjU3ICAgYzExLjk1MS0xNC40OTgsMTcuOTk0LTMzLjEwNCwxNi4xNjYtNDkuNzdDMjE0LjU0NCwwLjkyMSwyMTMuMzk1LTAuMDQ5LDIxMi4xMDEsMC4wMDJ6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIGRhdGEtb2xkX2NvbG9yPSIjNGI0OTVkIiBmaWxsPSIjNGI0OTVkIi8+CjwvZz48L2c+IDwvc3ZnPgo=') no-repeat;
+	background-size:30px auto;
+	background-position: 0px 19px;
+	transition:0.2s;
+}
+.Bottom-page .appleLogo:hover{
+	background:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiBjbGFzcz0iIj48Zz48Zz4KCTxwYXRoIGQ9Ik0zOTUuNzQ4LDI3Mi4wNDZjLTAuNjQ2LTY0Ljg0MSw1Mi44OC05NS45MzgsNTUuMjcxLTk3LjQ4M2MtMzAuMDc1LTQ0LjAxLTc2LjkyNS01MC4wMzktOTMuNjItNTAuNzM2ICAgYy0zOS44NzEtNC4wMzctNzcuNzk4LDIzLjQ3NC05OC4wMzMsMjMuNDc0Yy0yMC4xODQsMC01MS40MDktMjIuODc3LTg0LjQ3Ni0yMi4yNzZjLTQzLjQ1OCwwLjY0Ni04My41MjksMjUuMjY5LTEwNS45MDYsNjQuMTkgICBjLTQ1LjE1Miw3OC4zNS0xMS41NjMsMTk0LjQyLDMyLjQ0NSwyNTcuOTYzYzIxLjUwNCwzMS4xMDQsNDcuMTQ2LDY2LjAzOCw4MC44MTMsNjQuNzljMzIuNDIxLTEuMjk0LDQ0LjY4MS0yMC45NzksODMuODc4LTIwLjk3OSAgIGMzOS4xOTYsMCw1MC4yMTUsMjAuOTc5LDg0LjUyNCwyMC4zMzVjMzQuODg4LTAuNjQ4LDU2Ljk5MS0zMS42OTksNzguMzQ3LTYyLjg5OGMyNC42OTQtMzYuMDg0LDM0Ljg2Mi03MS4wMTksMzUuNDYyLTcyLjgxMiAgIEM0NjMuNjc4LDM3NS4yNiwzOTYuNDIyLDM0OS40OTUsMzk1Ljc0OCwyNzIuMDQ2eiBNMzMxLjI4LDgxLjc2MUMzNDkuMTQ5LDYwLjA4MiwzNjEuMjEsMzAuMDA1LDM1Ny45MiwwICAgYy0yNS43MzksMS4wNDgtNTYuOTM4LDE3LjE0NS03NS40MDUsMzguNzc1Yy0xNi41NywxOS4xODgtMzEuMDc1LDQ5LjgxMy0yNy4xODgsNzkuMjE4ICAgQzI4NC4wNjEsMTIwLjIzNSwzMTMuMzkyLDEwMy4zOTEsMzMxLjI4LDgxLjc2MXoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6I0ZBNEI0QiIgZGF0YS1vbGRfY29sb3I9IiNmYTRiNGIiPjwvcGF0aD4KPC9nPjwvZz4gPC9zdmc+') no-repeat;
+	background-size:30px auto;
+	background-position: 0px 19px;
+	color:#fa4c4d;
+}
+
+.Bottom-page .androidLogo{
+	background:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUwNS40OTkgNTA1LjQ5OSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTA1LjQ5OSA1MDUuNDk5OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPGc+CgkJCTxwYXRoIGQ9Ik00NzEuNDk3LDIzNC40NjZsLTkyLjA4Mi01My4xMzVsLTc1LjczMyw3My4yMDdsNjkuMjE1LDY2LjkwN2w5OC41OTktNTYuOTFjNS40MzItMy4xMzMsOC42NzgtOC43NTYsOC42NzgtMTUuMDMgICAgIEM0ODAuMTc1LDI0My4yMyw0NzYuOTI5LDIzNy42MDcsNDcxLjQ5NywyMzQuNDY2eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojNEI0OTVEIiBkYXRhLW9sZF9jb2xvcj0iIzRiNDk1ZCI+PC9wYXRoPgoJCQk8cG9seWdvbiBwb2ludHM9IjM2My43ODUsMTcyLjMwMSAyNjIuNDUzLDExMy44MDMgNDAuMzc1LDAgMjkxLjIwMywyNDIuNDcxICAgICIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojNEI0OTVEIiBkYXRhLW9sZF9jb2xvcj0iIzRiNDk1ZCI+PC9wb2x5Z29uPgoJCQk8cG9seWdvbiBwb2ludHM9IjQ0LjA2Myw1MDUuNDk5IDI2Mi44MzQsMzg0Ljk4OCAzNTcuMjY4LDMzMC40NzMgMjkxLjIwMywyNjYuNjA0ICAgICIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojNEI0OTVEIiBkYXRhLW9sZF9jb2xvcj0iIzRiNDk1ZCI+PC9wb2x5Z29uPgoJCQk8cG9seWdvbiBwb2ludHM9IjI1LjU1OSw5LjgxNSAyNS4zMjQsNDk5LjQ4NiAyNzguNzIxLDI1NC41MzMgICAgIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiM0QjQ5NUQiIGRhdGEtb2xkX2NvbG9yPSIjNGI0OTVkIj48L3BvbHlnb24+CgkJPC9nPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=') no-repeat;
+	background-size:30px auto;
+	background-position: 0px 19px;
+	transition:0.2s;
+}
+.Bottom-page .androidLogo:hover{
+	background:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUwNS40OTkgNTA1LjQ5OSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTA1LjQ5OSA1MDUuNDk5OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPGc+CgkJCTxwYXRoIGQ9Ik00NzEuNDk3LDIzNC40NjZsLTkyLjA4Mi01My4xMzVsLTc1LjczMyw3My4yMDdsNjkuMjE1LDY2LjkwN2w5OC41OTktNTYuOTFjNS40MzItMy4xMzMsOC42NzgtOC43NTYsOC42NzgtMTUuMDMgICAgIEM0ODAuMTc1LDI0My4yMyw0NzYuOTI5LDIzNy42MDcsNDcxLjQ5NywyMzQuNDY2eiIgc3R5bGU9ImZpbGw6I0ZBNEI0QiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBkYXRhLW9sZF9jb2xvcj0iI2ZhNGI0YiI+PC9wYXRoPgoJCQk8cG9seWdvbiBwb2ludHM9IjM2My43ODUsMTcyLjMwMSAyNjIuNDUzLDExMy44MDMgNDAuMzc1LDAgMjkxLjIwMywyNDIuNDcxICAgICIgc3R5bGU9ImZpbGw6I0ZBNEI0QiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBkYXRhLW9sZF9jb2xvcj0iI2ZhNGI0YiI+PC9wb2x5Z29uPgoJCQk8cG9seWdvbiBwb2ludHM9IjQ0LjA2Myw1MDUuNDk5IDI2Mi44MzQsMzg0Ljk4OCAzNTcuMjY4LDMzMC40NzMgMjkxLjIwMywyNjYuNjA0ICAgICIgc3R5bGU9ImZpbGw6I0ZBNEI0QiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBkYXRhLW9sZF9jb2xvcj0iI2ZhNGI0YiI+PC9wb2x5Z29uPgoJCQk8cG9seWdvbiBwb2ludHM9IjI1LjU1OSw5LjgxNSAyNS4zMjQsNDk5LjQ4NiAyNzguNzIxLDI1NC41MzMgICAgIiBzdHlsZT0iZmlsbDojRkE0QjRCIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIGRhdGEtb2xkX2NvbG9yPSIjZmE0YjRiIj48L3BvbHlnb24+CgkJPC9nPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=') no-repeat;
+	background-size:30px auto;
+	background-position: 0px 19px;
+}
+.Bottom-page .right{
+	width:109px;
+	height:70px;
+	float:left;
+	background:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhLS0gR2VuZXJhdG9yOiBHcmF2aXQuaW8gLS0+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBzdHlsZT0iaXNvbGF0aW9uOmlzb2xhdGUiIHZpZXdCb3g9IjAgMCA0MDAgMjU2Ljg4MSIgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTYuODgxIj48ZGVmcz48Y2xpcFBhdGggaWQ9Il9jbGlwUGF0aF9CVUloeTRMZmxleEcwZU0xQjlROFlvY0dQaG5pd3ZEaiI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTYuODgxIi8+PC9jbGlwUGF0aD48L2RlZnM+PGcgY2xpcC1wYXRoPSJ1cmwoI19jbGlwUGF0aF9CVUloeTRMZmxleEcwZU0xQjlROFlvY0dQaG5pd3ZEaikiPjxwYXRoIGQ9IiBNIDIzNy44NDEgMTY0LjE5MiBRIDI4Mi4zMDggMjM0LjQ2MiA0MDAgMjU2LjkwNCBMIDAgMjU2LjkwNCBMIDAgMCBMIDMxLjI3OCAwLjAyOSBDIDEwMCAtMy4yMzEgMTc2IDI1IDIzNy44NDEgMTY0LjE5MiBaICIgZmlsbC1ydWxlPSJldmVub2RkIiBmaWxsPSJyZ2IoMjU1LDI1NSwyNTUpIi8+PC9nPjwvc3ZnPg==') no-repeat;
+	background-size:100% 100%;
+}
+/* -----------------------------------CSS for Dishes sections----------------------------------------------------------*/
+.Dish-search{
+   padding-top: 0px;
+   background-color: beige;
+   margin: 0px;
+}
+.container2 {
+   position: relative;
+    width: 80%;
+    margin:0px auto;
+    padding: 5%;
+    background-color: white;
+    margin-bottom: 0px;
+
+ } 
+.dishes{
+   width:95%;
+   height: 20px;
+   text-align: center;
+   margin: 20px;
+}
+.dishbox{
+   display:flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content:space-around;   
+   
+}
+.Box{
+   width: 25%;
+   margin: 15px;
+   height: 175px;
+   background-color: black;
+   /*background-size: cover; */
+   border-radius: 10%;
+   cursor: pointer;
+   -webkit-box-shadow: 0 0 5px #000;
+        box-shadow: 0 0 5px #000;
+}
+.Box1{
+   background: url("..\\img\\mediterranean.jpg");
+   background-size: cover; 
+   
+   
+}
+.Box2{
+   background: url("..\\img\\asian.jpg");
+   background-size: cover;
+}
+.Box3{
+   background: url("..\\img\\mexican.jpg");
+   background-size: cover;
+}
+.Box4{
+   background: url("..\\img\\iran.jpg");
+   background-size: cover;
+}
+.Box5{
+   background: url("..\\img\\mediterranean.jpg");
+   background-size: cover;
+}
+.Box6{
+   background: url("..\\img\\vegan.jpg");
+   background-size: cover;
+}
+.overlay {
+   width: 100%;
+   height: 100%;
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: 1fr 2fr 2fr 1fr;
+   background: rgba(77, 77, 77, .9);
+   border-radius: 10%;
+   color: white;
+   opacity: 0;
+   transition: all 0.5s;
+   font-family: 'Playfair Display', serif;
+ }
+ .items {
+   padding-left: 20px;
+   letter-spacing: 3px;
+ }
+ .head {
+   font-size: 20px;
+   line-height: 20px;
+   transform: translateY(40px);
+   transition: all 0.7s;
+
+ }
+.items hr {
+     display: block;
+     width:0px;
+     border-bottom: solid 2px green;
+     position: absolute;
+     bottom: 0; left:20px;
+     transition: all .5s;
+     animation: hueRotation 2s linear infinite;
+}
+.Box:hover .overlay {
+   opacity: 1;
+}
+.Box:hover .overlay .head {
+      transform: translateY(0px);
+ }
+
+ .Box:hover .overlay .items  hr {
+   width: 75%;
+   transition-delay: .5s;
+ }
+
+.noselect {
+   -webkit-touch-callout: none;
+     -webkit-user-select: none;
+      -khtml-user-select: none;
+        -moz-user-select: none;
+         -ms-user-select: none;
+             user-select: none;
+       -webkit-tap-highlight-color: transparent;
+ }
+ 
+button {
+    width: 80px;
+    height: 30px;
+    margin: auto;
+    text-align: center;
+    cursor: pointer;
+    background:  rgba(77, 77, 77, .9);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 10px 25px #57aba7, 0px -10px 25px #a6fffa, inset 0px -5px 10px #57aba7, inset 0px 5px 10px #a6fffa;
+    font-family: 'Damion', cursive;
+    color: white;
+    font-size: 10px;
+    transition: 500ms;
+}
+ 
+button:hover {
+    border: 2px solid #6dd6d1;
+    animation: hueRotation 2s linear infinite;
+}
+ 
+ @keyframes hueRotation {
+    to {filter: hue-rotate(360deg);}
+}
+ 
+ button:focus {
+    outline: none;
+}
+    
+/* -----------------------------------CSS for shop section----------------------------------------------------------*/
+.order{
+   padding-top: 0px;
+   padding-bottom: 20px;
+   background-color: beige;
+   margin: 0px;
+}
+.container3 {
+   position: relative;
+   width: 80%;
+   height: 900px;
+   padding: 5%;
+   background-image:url("..\\img\\picwish.jpg") ;
+   margin: 0px auto;
+
+ }
+ .title-order {
+   width:90%;
+   padding: 0px;
+   height: 40px;
+   background-color: white;
+   text-align: center;
+   margin: 0px 150px 0px 76px;
+}
+.shopping{
+   position: relative;
+   display:flex;
+   flex-direction: row;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   margin-left: 420px;
+}
+.shopping .card{
+      position: relative;
+      border-radius: 10px;
+  
+}
+.shopping .card .imag {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   transition: 0.7s;
+   z-index: 1;
+}
+
+
+
+.shopping .card .face {
+   width: 200px;
+   height: 200px;
+   transition: 0.5s;
+}
+
+.shopping .card .face.face1 {
+   position: relative;
+   background: #333;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   z-index: 1;
+   transform: translateY(100px);
+}
+
+.shopping .card:hover .face.face1{
+   background: #ff0057;
+   transform: translateY(0px);
+}
+
+.shopping .card .face.face1 .content {
+   opacity: 1;
+   transition: 0.5s;
+}
+
+.shopping .card:hover .face.face1 .content {
+   opacity: 1;
+}
+
+.shopping .card .face.face1 .content i{
+   max-width: 100px;
+}
+
+.shopping .card .face.face2 {
+   position: relative;
+   background: #fff;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 20px;
+   box-sizing: border-box;
+   box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+   transform: translateY(-100px);
+}
+
+.shopping .card:hover .face.face2{
+   transform: translateY(0);
+}
+
+.shopping .card .face.face2 .content p {
+   margin: 0;
+   padding: 0;
+   text-align: center;
+   color: #414141;
+}
+
+.shopping .card .face.face2 .content h3 {
+   margin: 0 0 10px 0;
+   padding: 0;
+   color: #fff;
+   font-size: 24px;
+   text-align: center;
+   color: #414141;
+} 
+
+.shopping a {
+   text-decoration: none;
+   color: #414141;
+}
+/* -------button of shopping----*/
+.two {
+   border: none;
+   border-radius: 4px;
+   text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.48);
+   overflow: hidden;
+   padding: auto;
+   margin: 70px 10px 5px 10px;
+   position: relative;
+   color: white;
+   outline: none;
+   cursor: pointer;
+   width: 170px;
+   height: 75px;
+   -webkit-transition: background-position .7s,box-shadow .4s;
+   transition: background-position .7s,box-shadow .4s;
+   background-size: 110%;
+   font-family: 'Oswald', sans-serif;
+ }
+
+/* -----------------------------------CSS for shop devices section----------------------------------------------------------*/
+.devices{
+   padding-top: 0px;
+   padding-bottom: 20px;
+   background-color: beige;
+   margin: 0px;
+}
+.container4 {
+   position: relative;
+   width: 80%;
+   height: 300px;
+   padding: 5%;
+   background-image:url("..\\img\\cheff.jpg") ;
+   margin: 0px auto;
+
+ }
